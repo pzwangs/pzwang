@@ -1,0 +1,304 @@
+.table1 {
+	border: 1px solid #2462F4;
+	margin: 1px;
+	padding: 1px;
+}
+/*--上、下无边*/
+.table2 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*右无边*/
+.table3 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*--table标签全边*/
+.table4 {
+	border: 1px solid #2462F4;
+	margin: 1px;
+	padding: 1px;
+}
+/*--左、右无边*/
+.table5 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/* 左无边*/
+.table6 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*--上、右、左无边*/
+.table7 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*左、上无边-->*/
+.table8 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*全边*/
+.table9 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*上无边*/
+.table10 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*--下、右、左无边*/
+.table11 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*--上、下、左无边*/
+.table12 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+
+/*--下、右无边*/
+.table13 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+
+/*--上、下、右无边*/
+.table14 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+
+/*右、上无边*/
+.table15 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+
+/*下、左无边*/
+.table16 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+/*下无边*/
+.table17 {
+	margin: 1px;
+	padding: 1px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: 2462F4;
+	border-right-color: 2462F4;
+	border-bottom-color: 2462F4;
+	border-left-color: 2462F4;
+}
+
+.button1 {
+BORDER-RIGHT: #2462F4 1px solid; BORDER-TOP: #2462F4 1px solid; BORDER-LEFT: #2462F4 1px solid; COLOR: #2462F4; BORDER-BOTTOM: #2462F4 1px solid; BACKGROUND-COLOR: #FFFFFF}
+
+.button2 {
+BACKGROUND: #FFFFFF; COLOR: #2462F4 }
+
+.button3 {
+BORDER-RIGHT: #2462F4 1px solid; BORDER-TOP: #2462F4 1px solid; BORDER-LEFT: #2462F4 1px solid; BORDER-BOTTOM: #2462F4 1px solid; }
+
+.button4 {
+BORDER-RIGHT: #363636 1px solid; BORDER-TOP: #363636 1px solid; BORDER-LEFT: #363636 1px solid; BORDER-BOTTOM: #363636 1px solid; COLOR: #2462F4 }
+
+.checkbox1
+{
+background-color: #FFFFFF ;
+}
+.checkbox2
+{
+position: absolute;
+clip: rect(3 18 18 3);
+background-color: blue;
+}
+.checkbox3
+{
+position: absolute;
+clip: rect(5 19 18 5);
+}
+.checkbox4
+{
+position: absolute;
+clip: rect(6 15 15 6);
+z-index: 9;
+}
