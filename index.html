@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title> Pzwang 导航 </title>
+<style>
+  body {
+     margin: 0;
+    font-family: Arial, sans-serif;
+  }
+ 
+/* 导航属性 */
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    padding: 10px 0;
+    transition: top 0.3s; /* Add transition effect for smooth scrolling */
+    display: flex;/* 盒子并排显示*/
+    text-align: center;
+    margin: 0px;/* 外边框属性，合写margin属性,直接后边跟4个值:分别代表 上 右 下 左*/
+    padding: 6px;/* 内边距 */ 
+    border-radius: 0px;/* 圆角属性 */ 
+    box-shadow: 0px 0px 10px #000;/* 阴影属性 */ 
+  }
+/* 导航内容属性 */ 
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none;
+  }
+ 
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+ 
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+/* 隐藏未选中页面 */
+  .hidden { display: none; }
+
+
+
+/* 底部颜色属性 */
+  .green-bg { 
+    background-color:#333;
+    padding: 1px 0;
+     }
+
+/* 超链接标签属性 */
+  .button-container {
+    text-align: left; /* 靠左 */
+  }
+  .button-container a {
+  width: 150px; /* 按钮宽度 */
+  height: 50px; /* 按钮高度 */
+    text-decoration: none; /* 移除下划线 */
+    display: inline-block; /* 使超链接按钮水平排列 */
+    padding: 10px 20px; /* 按钮内间距 */
+    margin: 5px 5px 5px 5px; /* 按钮间间距 */
+    background-color: #333; /* 背景颜色 */
+    color: white; /* 文本颜色 */
+    text-align: center; /* 这将文本居中 */
+    border: none; /* 移除边框 */
+    border-radius: 5px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+  }
+  .button-container a:hover {
+  background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+  }
+
+/* 标题文字阴影效果属性 */
+.title-shadow {
+    text-shadow: 1px 1px 1px #333; /* x-offset, y-offset, blur-radius, color */
+}
+
+/* 首页盒子并排属性 */
+.container {
+    display: flex; /* 使用Flexbox布局 */
+    justifycontent: spacebetween; /* 子元素之间留有空间 */
+    alignitems: center; /* 垂直居中对齐 */
+}
+.slider, .welcome-box {
+    width: 50%; /* 每个盒子占据一半的宽度 */
+    padding: 10px; /* 内边距 */
+    boxsizing: borderbox; /* 将边框和内边距包含在盒子宽度内 */
+}
+
+/* 首页图片轮播属性 */
+ .slider {
+
+    height:300px;
+    padding: 8px;
+    margin: 8px 8px 8px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .slider img {
+    width: 100%;
+    height:100%;
+    display: none;
+    border-radius: 5px;
+  }
+
+ /* 欢迎来到我的网站*/
+  .welcome-box {
+    margin: 8px 0px 8px 8px;
+    padding: 88px 0px 0px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+ /* 常用网站*/
+  .wangzhan-box {
+    margin: 8px 0px 8px 0px;
+    padding: 1px 0px 8px 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+
+ /* 常用网站按钮*/
+  .button-home a {
+    text-decoration: none; /* 移除下划线 */
+    display: inline-block; /* 使超链接按钮水平排列 */
+    width: 120px; /* 按钮宽度 */
+    height: 30px; /* 按钮高度 */
+    padding: 20px 40px; /* 按钮内间距 */
+    margin: 5px 5px; /* 按钮间间距 */
+    background-color: #f2f2f2; /* 背景颜色 */
+    color:  #333; /* 文本颜色 */
+    border: none; /* 移除边框 */
+    border-radius: 2px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+  }
+  .button-home a:hover {
+    background-color: #ddd; /* 鼠标悬停时的背景颜色 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px 10px; /* 按钮间间距 */
+    padding: 26px 45px; /* 按钮内间距 */
+  }
+
+ /* 百度CSS样式 */
+    @keyframes backgroundAnimation {
+      0% {
+        background-color: #fff;; /* 起始颜色为粉色 */
+      }
+      50% {
+        background-color: #87CEEB; /* 中间颜色为天蓝色 */
+      }
+      100% {
+        background-color: #fff;; /* 结束颜色为粉色 */
+      }
+    }
+    
+    body {
+      animation: backgroundAnimation 6s infinite; /* 6秒的动画循环 */
+    }
+    .search-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 160px;
+margin-bottom:260px
+    }
+    .search-input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: box-shadow 0.3s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .search-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .search-button:hover {
+      background-color: #45a049;
+    }
+
+  /* 设置表格的边框样式、宽度和背景色 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2f2f2;
+  }
+  /* 设置表头样式 */
+  th {
+    padding: 8px;
+    background-color: #2F4F4F;
+    color: white;
+    text-align: left;
+  }
+  /* 设置表格单元样式 */
+  td {
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+  }
+  /* 鼠标悬浮在表格行上时改变背景色 */
+  tr:hover {background-color: #D3D3D3;}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div style="margin:20px 10px 20px 50px" >
+ <img src="https://pzwangs.github.io/SimpleIconsPiapro.png" width="24" height="24"><FONT face=楷体_GB2312 color=#0000 size=5> Pzwang导航</FONT>
+</div>
+  <a href="#section1">首页</a>
+  <a href="#section2">软件</a>
+  <a href="#section3">影视</a>
+  <a href="#section4">百度</a>
+  <a href="#section5">关于</a>
+</div>
+ 
+<div style="margin-top:120px; margin-left:0px; margin-right:0px">
+  <!-- 设置外边距，使盒子下移。margin：外边距；border：边框；padding：内边距 ；content：中心内容 -->
+
+<div id="section1" style="padding-left:100px;padding-right:100px">
+  <h2 class="title-shadow">首页</h2>
+  <p class="title-shadow">Home</p>
+  <hr style="height:20px;background-color: #333">
+<div class="container">
+<div class="slider">
+<img src="https://img2.baidu.com/it/u=2749347821,1550509148&fm=253&fmt=auto&app=120&f=JPEG?w=626&h=430" alt="Image 1">
+        <img src="https://img2.baidu.com/it/u=3706564023,2183418749&fm=253&fmt=auto&app=120&f=JPEG?w=656&h=437" alt="Image 2">
+        <img src="https://img1.baidu.com/it/u=2872831167,2955577035&fm=253&fmt=auto&app=138&f=JPEG?w=533&h=300" alt="Image 3">
+  <!-- Add more images here -->
+</div>
+<div class="welcome-box">
+  <h1>欢迎来到我的网站</h1>
+  <p>这是一个有趣的、好玩的、高级的网站！！！</p>
+</div>
+</div>
+<div class="wangzhan-box">
+  <h3>常用网站</h3>
+<div class="button-home">
+    <a href="https://www.2345.com/?kpzwang">2345导航</a>
+    <a href="https://www.bgrdh.com">GitHub-办公人导航</a>
+    <a href="https://www.9eip.com">完美导航</a>
+    <a href="/zfb">支付宝领红包</a>
+    <a href="https://font.sucai999.com">字体搬运工</a>
+    <a href="https://szfilehelper.weixin.qq.com/">微信传输助手</a>
+    <a href="http://gtxp2.com">上海绿茶</a>
+    <a href="https://slsup.com">深蓝软件</a>
+    <a href="https://www.xiaodao.biz">小刀娱乐网</a>
+    <a href="https://www.yikm.net">小霸王</a>
+    <a href="http://netcut.cn">网络剪贴板</a>
+    <a href="https://shimo.im">石墨文档</a>
+    <a href="https://meeting.dingtalk.com">钉钉会议</a>
+    <a href="https://bip.bgyfw.com/" >碧桂园服务</a>
+    <a href="https://www.9eip.com">完美导航</a>
+    <a href="https://www.aotusss.com">奥兔导航</a>
+    <a href="https://www.speedtest.cn">测速网</a>
+    <a href="http://www.jiniannet.com/page/allcolor">取色器</a>
+    <a href="https://zh.pixfix.com">PIX FIX图片修复</a>
+    <a href="https://github.com">GitHub</a>
+ </div>
+</div>
+</div>
+ 
+<div id="section2" style="padding-left:100px;padding-right:100px" class="hidden">
+  <h2 class="title-shadow">软件</h2>
+  <p class="title-shadow">Soft</p>
+  <hr style="height:20px;background-color: #333">
+<table border="1">
+  <tr>
+    <th>序号</th>
+    <th>软件名称</th>
+    <th>说明</th>
+    <th>下载链接</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>WinRAR</td>
+    <td>WinRAR解压缩软件</td>
+    <td><a href="https://xiaodao.lanzoui.com/b0dq1vi3i">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>搜狗拼音</td>
+    <td>搜狗输入法去广告精简优化版</td>
+    <td><a href="https://lcba.lanzouy.com/iIuGP00x5hsj">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>火绒安全</td>
+    <td>火绒安全</td>
+    <td><a href="https://www.huorong.cn/person5.html">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>酷我音乐</td>
+    <td>VIP破解版</td>
+    <td><a href="https://pzwang.lanzouw.com/ivPur1rntqkh">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Chrome</td>
+    <td>谷歌浏览器</td>
+    <td><a href="https://www.google.cn/chrome/index.html">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>微信</td>
+    <td><a href="https://xiaodao.lanzoux.com/b0dqvb1mf">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>驱动总裁</td>
+    <td>驱动总裁</td>
+    <td><a href="https://www.sysceo.com/software-softwarei-id-258.html">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>360驱动大师</td>
+    <td>360驱动大师</td>
+    <td><a href="https://dm.weishi.360.cn/home.html">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>360驱动大师</td>
+    <td>360驱动大师</td>
+    <td><a href="https://www.123pan.com/s/dvtA-sj4uh">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>WPS Office 2019</td>
+    <td>WPS Office 2019机关单位版</td>
+    <td><a href="https://www.123pan.com/s/dvtA-sj4uh">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>WPS Office 个人版</td>
+    <td>WPS Office 个人版</td>
+    <td><a href="https://jifendownload.yl234.com/jifen_2345/wpssetup_kpzwang_281505.exe" >>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>左轮迷你菜单</td>
+    <td>左轮迷你菜单</td>
+    <td><a href="https://pzwang.lanzv.com/ib8fnsf">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>深蓝迷你菜单</td>
+    <td>深蓝迷你菜单</td>
+    <td><a href="https://pzwang.lanzv.com/iS7OJ1c4xf7i">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>科来网络</td>
+    <td>科来网络</td>
+    <td><a href="https://www.colasoft.com.cn/download.php">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>QuickPing</td>
+    <td>QuickPing</td>
+    <td><a href="https://down10.zol.com.cn/unify/xiazai/52/511904_20230413122152.exe?dname=QuickPing_v0.80.exe">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>pinginfoview202</td>
+    <td>pinginfoview202</td>
+    <td><a href="https://pzwang.lanzouw.com/ib8e9uh">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>远程桌面空密码</td>
+    <td>无密码连接远程桌面设置</td>
+    <td><a href="https://pzwang.lanzouw.com/iQrdt1nb626f">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>向日葵个人版</td>
+    <td>向日葵个人版</td>
+    <td><a href="https://sunlogin.oray.com/download?categ=personal">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>向日葵企业版</td>
+    <td>向日葵企业版</td>
+    <td><a href="https://pzwang.lanzouw.com/iageL1bgzzaj">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>激活工具</td>
+    <td>系统激活工具</td>
+    <td><a href="https://pzwang.lanzouw.com/ixoZq1sqahve">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>PDF编辑器</td>
+    <td>PDF编辑器</td>
+    <td><a href="https://pzwang.lanzouw.com/i1wtf1vevl8h">>>下载<<</a></td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>OFD发票阅读器</td>
+    <td>OFD发票阅读器</td>
+    <td><a href="https://pzwang.lanzouw.com/iypeQ1vevacf">>>下载<<</a></td>
+  </tr>
+</table>
+</div>
+ 
+<div id="section3" style="padding-left:100px;padding-right:100px" class="hidden">
+  <h2 class="title-shadow">影视</h2>
+  <p class="title-shadow">Media</p>
+  <hr style="height:20px;background-color: #333">
+<div class="button-container">
+  <a href="https://www.yjys02.com">缘觉影视</a>
+  <a href="https://www.freeok.vip">FreeOK</a>
+  <a href="https://www.keke9.app">可可影视</a>
+  <a href="https://www.80yy3.com">新视觉影院</a>
+  <a href="https://dsxys.pro">大师兄影视</a>
+  <a href="https://www.tvn.cc">韩剧网</a>
+  <a href="https://ddys.pro" >低端影视</a>
+  <a href="https://nuoin.com">诺影导航</a>
+  <a href="https://klyingshi.net">可乐影视</a>
+  <a href="https://qyzf88.com">白嫖者联盟</a>
+  <a href="https://www.hdmoli.pro">HDmoli</a>
+  <a href="https://www.novipnoad.net">NO视频</a>
+  <a href="https://www.zhuiyingmao2.com">追影猫</a>
+  <a href="https://www.ty264.com">TY264</a>
+  <a href="http://dyxs.me">电影先生</a>
+  <a href="https://www.zxzjhd.com/">在线之家</a>
+  <a href="https://subaibai.vip/">素白白影视</a>
+  <a href="https://www.maolvys.com">毛驴影视</a>
+  <a href="https://gaze.run">注视影视</a>
+  <a href="https://v5deo.com/">555电影</a>
+  <a href="https://www.mtq.app">蒙太奇</a>
+  <a href="https://kuaizi.cc/">人人影视</a>
+</div>
+</div>
+
+<div id="section4" style="padding-left:100px;padding-right:100px" class="hidden">
+  <h2 class="title-shadow">百度</h2>
+  <p class="title-shadow">Baidu</p>
+  <hr style="height:20px;background-color: #333">
+<div class="search-form" style=height:0px;>
+    <form id="searchForm" action="https://www.baidu.com/s" method="get">
+      <input class="search-input" type="text" name="wd" placeholder="搜索...">
+      <input class="search-button" type="submit" value="百度一下">
+    </form>
+  </div>
+</div>
+
+<div id="section5" style="padding-left:100px;padding-right:100px" class="hidden">
+  <h2 class="title-shadow">关于</h2>
+  <p class="title-shadow">About</p>
+  <hr style="height:20px;background-color: #333">
+     <h2 align="center">关于本站</h2>
+     <a><FONT face=楷体_GB2312 size=2> 网站类型：个人网站。<hr>创建时间：初次创建2024年。<hr>感谢您访问pzwang的个人网站，本站会分享个人的一些生活经验，展示所有个人收集的绿色软件。<hr>另外还有一些个人的技术和心得文章，同时也收集了一些朋友推荐共享给我第三方好软件，但不为这些软件作任何质量保证，请自行仔细甄别。</FONT> </a>
+  <!-- style="text-indent: 2em后移4个字符；“&nbsp;”增加一个空字符 -->
+<p style="text-indent: 2em;">&nbsp;</p>
+    </div>
+</div>
+</div>
+
+<script>
+  // 获取所有的section元素
+  const sections = document.querySelectorAll('div[id^="section"]');
+ 
+  // 监听hashChange事件以根据URL的hash更改内容的可见性
+  window.addEventListener('hashchange', () => {
+    // 隐藏所有的section
+    sections.forEach(section => section.classList.add('hidden'));
+ 
+    // 根据新的hash显示对应的section
+    const hash = window.location.hash;
+    const section = document.querySelector(hash);
+    if (section) section.classList.remove('hidden');
+  });
+
+    // 首页图片轮播属性
+  let currentIndex = 0;
+  const images = document.querySelectorAll('.slider img');
+  const imageCount = images.length;
+ 
+  function changeImage() {
+    images[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex + 1) % imageCount;
+    images[currentIndex].style.display = 'block';
+  }
+ 
+  setInterval(changeImage, 3000); // Change image every 3 seconds
+</script>
+
+<div class="green-bg" align="center" style="margin-top:10px">
+  <!-- 底部 -->
+    <p><FONT face=楷体_GB2312 color=#FFFFFF size=1> Copyright © 2019-2024 | by:Pzwang | 手机:13659812736 | 微信:pzwangs</p>
+    <p>本站纯属个人学习交流之用,如有侵犯您的版权请与我联系,我会马上改正并删除! </FONT></p>
+</div>
+<div align="center" style="margin-top:10px ; margin-bottom:30px">  
+  <a href="https://github.com/" target="github"  style="color: rgba(0, 0, 0, 0.5);">   █▓2024.8.8▓█   </a>
+</div>
+</body>
+</html>
